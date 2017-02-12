@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	 <div class="list">
+        <ul>
+            <li ng-repeat='value in movie.subjects'>
+                <a href="#/details">
+                <!-- ng-src相当于ng-bind -->
+                    <img ng-src="{{value.images.large}}" alt="" >
+                </a>
+                <div class="meta">
+                    <h4><span ng-bind='value.title'></span> <em ng-bind='value.rating.average'></em></h4>
+                    <div class="otherinfo">类型:
+                        <!-- ngRepeat: gen in item.genres --><span ng-repeat="gen in value.genres" class="ng-binding ng-scope" ng-bind='gen'></span>
+                       <!--  <span ng-repeat="gen in item.genres" class="ng-binding ng-scope">传记</span>
+                        <span ng-repeat="gen in item.genres" class="ng-binding ng-scope">历史</span> -->
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
