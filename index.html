@@ -8,14 +8,16 @@
     <link rel="stylesheet" type="text/css" href="assets/css/wap.css">
 </head>
 
-<body ng-app='movieApp'>
+<body ng-app='movieApp' ng-controller='indexCtrl'>
     <!-- 顶部导航栏开始 -->
     <div class="top">
         <div class="header">
             <a href="#/"><img src="assets/img/logo.png" alt=""></a>
             <div class="search">
-                <input class="my-input" type="text" placeholder="电影搜索">
-                <button>搜索</button>
+                <form ng-submit='search()'>
+                    <input class="my-input" type="text" placeholder="电影搜索" ng-model='searchName'>
+                <button type='submit'>搜索</button>
+                </form>
             </div>
         </div>
         <nav class="nav">
@@ -35,29 +37,7 @@
         
         </div>
         <!-- 电影详情开始 -->
-        <div class="detail">
-            <h1>乾隆秘史  大清宝典</h1>
-            <div class="dt-info">
-                <div class="dti-i"><img src="assets/img/sc.jpg" alt=""></div>
-                <div class="dti-w">
-                    <p>
-                        <strong>导演：</strong>
-                        <span>XXX、XXX</span>
-                    </p>
-                    <p>
-                        <strong>主演：</strong>
-                        <span>舒畅、XXX</span>
-                    </p>
-                    <p><strong>类型：</strong>爱情、古装</p>
-                    <p><strong>国家：</strong>中国</p>
-                    <p><strong>评分：</strong>9.9</p>
-                    <p><strong>时间：</strong>2016</p>
-                    <p><strong>又名：</strong>大清宝典</p>
-                </div>
-            </div>
-            <h3>剧情简介:</h3>
-            <p style="color:#676767">这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。这里剧情简介。</p>
-        </div>
+        
         <!-- 电影详情结束 -->
         <!--其他-->
     </div>
@@ -76,6 +56,9 @@
     <script src="js/nowplaying.js"></script>
     <script src="js/later.js"></script>
     <script src="js/top250.js"></script>
+    <script src="js/details.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>

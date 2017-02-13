@@ -8,19 +8,24 @@ angular.module('movieApp.route',['ngRoute'])
 		// 这里的路径是以ng-view页面的路径
 		templateUrl:'tmps/index-tmp.html'
 	})
-	.when('/nowplaying',{
+	.when('/nowplaying/:pageid?',{
 		templateUrl:'tmps/nowplaying.html',
 		controller:'nowplayingCtrl'
 	})
-	.when('/later',{
+	.when('/later/:pageid?',{
 		templateUrl:'tmps/later.html',
-		controller:''
+		controller:'laterCtrl'
 	})
-	.when('/top250',{
+	.when('/top250/:pageid?',{
 		templateUrl:'tmps/top250.html',
-		controller:''
+		controller:'top250Ctrl'
 	})
-	.otherwise({
-		redirectTo:'/'
+	.when('/details/:id?', {
+		templateUrl:'tmps/details.html',
+		controller: 'detailsCtrl' 
+	})
+	.when('/search/:searchName?',{
+		templateUrl:'tmps/search.html',
+		controller:'searchCtrl'
 	})
 }])
