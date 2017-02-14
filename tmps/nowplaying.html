@@ -47,9 +47,10 @@
         <div class="paging">
             <label class="ng-binding">总共：{{total}}条记录,第{{pageid}}/{{pageCount}}页;</label>
             <!-- 加上disable类样式，表示按钮禁用状态 -->
-            <a class="prev disable" ng-class="{'disable':pageid == 1}" href="#/nowplaying/1">首页</a>
-            <a class="prev disable" ng-class="{'disable':pageid == 1}" href="#/nowplaying/{{prevPage||1}}">上一页</a>
-            <a class="next" ng-class="{'disable':pageid == pageCount}" href="#/nowplaying/{{nextPage||2}}">下一页</a>
+            <a class="prev" ng-class="{'disable':pageid == 1}" href="#/nowplaying/1">首页</a>
+            <a class="prev" ng-class="{'disable':pageid == 1}" href="#/nowplaying/{{prevPage}}">上一页</a>
+            <a class="next" ng-class="{'disable':pageid == pageCount}" href="#/nowplaying/{{nextPage}}">下一页</a>
+            <!-- 为什么第一次加载的时候nextPage是NaN -->
             <a class="next" ng-class="{'disable':pageid == pageCount}" href="#/nowplaying/{{pageCount}}">尾页</a>
         </div>
     </div>

@@ -1,0 +1,19 @@
+angular.module('movieApp', 
+	['movieApp.route', 
+	'movieApp.service', 
+	'movieApp.nowplayingCtrl',
+    'movieApp.laterCtrl', 
+    'movieApp.top250Ctrl', 
+    'movieApp.detailsCtrl', 
+    'movieApp.indexCtrl', 
+    'movieApp.searchCtrl'
+	])
+.directive('ngActive',function(){
+	console.log(1)
+	return {
+		restrict:'ECMA',
+		link:function(scope,element,attributes){
+			console.log(element)
+		}
+	}
+})

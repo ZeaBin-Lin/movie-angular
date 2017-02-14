@@ -4,10 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style type="text/css">
+    *{
+        padding: 0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    .container{
+        height: 100px;
+    }
+        .one{
+            
+            background-color: red;
+            padding-left: 200px;
+            padding-right: 200px;
+            height: 100px;
+            float: left;
+            display: inline-block;
+            width: 100%;
+        }
+        .two{
+            height:100px;
+            width: 200px;
+            background-color: green;
+            margin-left:-100%;
+            float:left;
+        }
+        .three{
+            height:100px;
+            width: 200px;
+            background-color: blue;
+            float:left;
+            margin-right: -200px;
+        }
+    </style>
 </head>
 
-<body>
+<body ng-app='myApp'>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+    <ng-test></ng-test>
+    <div class="container">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+
     <script type="text/javascript">
+        angular.module('myApp',[])
+        .directive('ngTest',function(){
+            return {
+                template:'<h1>自定义指令</h1>',
+                link:function(a,element,c){
+                    // console.log(a,element,c)
+                    
+                }
+            }
+        })
+    // document.querySelector('.one').addEventListener('click',function(e){
+    //     console.log(e)
+    // })
+    // document.querySelector('ul').addEventListener('click',function(e){
+    //     console.log(e)
+    // })
     function fun(n, o) {
         console.log(o)
         return {

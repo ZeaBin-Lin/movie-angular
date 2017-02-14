@@ -11,7 +11,6 @@ angular.module('movieApp.searchCtrl',[])
         $scope.prevPage = $routeParams.pageid - 1;
         $scope.nextPage = ($routeParams.pageid-0) + 1;
         $scope.pageCount = Math.ceil(data.total/5);
-        console.log($scope.pageCount);
         if($routeParams.pageid <= $scope.prevPage){
         	$scope.prevPage = 1;
         }
